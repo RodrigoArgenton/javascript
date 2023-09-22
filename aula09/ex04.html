@@ -1,3 +1,4 @@
+<!-- testando esdição com o DOM -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,11 +14,32 @@
   </style>
 </head>
 <body>
-  <h1>iniciando estudos de DOM</h1>
-  <p>aqui vai o resultado</p>
-  <p>Aprendenco a usar <strong>DOM</strong> em JavaScript</p>
+  <h1 id="idTeste">iniciando estudos de DOM</h1>
+  <p name="nameTeste">aqui vai o resultado</p>
+  <p class="classTest">Aprendenco a usar <strong>DOM</strong> em JavaScript</p>
   <div>clique aqui</div>
   <script>
+    //manipulação de dados com o DOM
+
+    //metodo para trocar texto onde passa ID como referência
+    var postID = window.document.getElementById('idTeste')
+    postID.innerText = 'testando a função do inner text com o getElementById'
+    postID.style.background = 'black'
+    postID.style.padding = '30px'
+
+    var postClass = window.document.getElementsByClassName('classTest')
+    postClass[0].innerHTML = '<strong>Testando o innerHtml com getElementsByClassName</strong>'
+    postClass[0].style.background = 'green'
+
+    //metodo para repetir um valor pelo name como referência
+    var postName = window.document.getElementsByName('nameTeste')[0]
+    document.write('</br>'+ postName.innerHTML)
+    postName.style.background = 'white'
+    postName.style.color = 'black'
+    postName.style.padding = '30px'
+
+    var postBody = document.body
+    postBody.style.background = 'blue'
 
   </script>
 </body>
